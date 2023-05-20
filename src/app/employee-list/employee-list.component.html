@@ -1,0 +1,16 @@
+<div fxLayout='row' fxLayoutWrap class="cards">
+    <div class="container example-card" fxFlex="20">
+        <mat-card *ngFor="let e of empList" class="asd cardPardding">
+            <mat-card-header>
+              <mat-card-title>{{e.name}}</mat-card-title>
+              <mat-card-subtitle>{{e.number}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card>
+                <mat-card-content></mat-card-content>
+                <a [routerLink]="['details']" [queryParams]="{ filterby: '${{e.job}}' }"> {{e.job}}</a>
+                <mat-card-content>{{e.deptno}}</mat-card-content>
+            </mat-card>
+          </mat-card>
+    </div>
+</div>
+<router-outlet></router-outlet>
